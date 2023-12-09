@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 5px;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: lightgoldenrodyellow;
+  }
+img{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 20%;
+    min-height: 20%;
+}
