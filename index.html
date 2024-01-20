@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#">
+        <img
+          src="asset/Screenshot_2023-12-09_at_17-11-02_Deep_Dish_Pizza_Logo-removebg-preview.png"
+          alt="deep logo"
+          class="logo"
+        />
+      </a>
+
+      <div class="nav-container">
+        <div class="detail">
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!--Recipe container-->
+    <div class="main-container">
+      <h1>अतिथिदेवो भव 🙏</h1>
+      <div class="container">
+        <div class="items" id="recipe-container"></div>
+      </div>
+    </div>
+    <!-- find & sort & pop button -->
+    <h2>Recipe Search and Sorting</h2>
+    <input type="text" id="searchInput" placeholder="Enter a keyword" />
+    <button onclick="searchAndDisplay()">Search</button>
+    <button onclick="sortAndDisplay()">Sort by Ingredients</button>
+    <button onclick="document.getElementById('popup').style.display='block'">
+      Add More Recipes
+    </button>
+    <div id="searchResults"></div>
+    <div id="sortedResults"></div>
+
+    <!-- popup start here-->
+
+    <div id="popup">
+      <form id="recipe-form">
+        <h2>Add New Recipe</h2>
+        <div class="fpop"><label for="title">Title:</label></div>
+        <div class="fpop">
+          <input class="finput" type="text" id="title" name="title" required />
+        </div>
+
+        <div class="fpop">
+          <label for="ingredients">Ingredients (Atlest 5):</label>
+        </div>
+        <div class="fpop">
+          <input
+            class="finput"
+            type="text"
+            id="ingredients"
+            name="ingredients"
+            required
+          />
+        </div>
+
+        <div class="fpop">
+          <label for="timer">Cooking Timer (minutes):</label>
+        </div>
+        <div class="fpop">
+          <input
+            class="finput"
+            type="number"
+            id="timer"
+            name="timer"
+            required
+          />
+        </div>
+
+        <div class="fpop"><label for="instruction">instruction:</label></div>
+        <div class="fpop">
+          <textarea class="fpop" id="instruction"></textarea>
+        </div>
+        <div class="fpop">
+          <button type="button" class="cancel" onclick="cancelRecipe()">
+            Cancel
+          </button>
+          <button type="button" onclick="addRecipe()">Submit</button>
+        </div>
+      </form>
+    </div>
+    <!-- popup end here-->
+    <div id="recipe-list">
+      <h2>New Recipes</h2>
+      <div class="fnewrecipe">
+        <ul id="recipes"></ul>
+      </div>
+    </div>
+
+    <div class="recipe-timer" id="page-timer">
+      Time spent on the page: 0 seconds
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
