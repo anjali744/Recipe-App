@@ -19,34 +19,40 @@
       <div class="nav-container">
         <div class="detail">
           <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Recipes</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">All recipe</a></li>
+            <li><a href="#">Breakfast</a></li>
+            <li><a href="#">Dinner</a></li>
+            <li><a href="#">Snacks</a></li>
           </ul>
         </div>
       </div>
     </header>
+
     <!--Recipe container-->
     <div class="main-container">
       <h1>अतिथिदेवो भव 🙏</h1>
+      <!-- find & sort & error  -->
+      <div class="top-main-container">
+        <div>
+          <h3>Recipe Search and Sorting</h3>
+          <input type="text" id="searchInput" />
+          <button onclick="searchRecipe()">Search</button>
+          <button onclick="sortAndDisplay()">Sort by Ingredients</button>
+          <p class="error-message" id="errorMessage" style="display: none">
+            No matching recipes found.
+          </p>
+        </div>
+        <div class="recipe-timer" id="page-timer">
+          Time spent on the page: 0 seconds
+        </div>
+      </div>
+      <!-- main container start from here -->
       <div class="container">
         <div class="items" id="recipe-container"></div>
       </div>
     </div>
-    <!-- find & sort & pop button -->
-    <h2>Recipe Search and Sorting</h2>
-    <input type="text" id="searchInput" placeholder="Enter a keyword" />
-    <button onclick="searchAndDisplay()">Search</button>
-    <button onclick="sortAndDisplay()">Sort by Ingredients</button>
-    <button onclick="document.getElementById('popup').style.display='block'">
-      Add More Recipes
-    </button>
-    <div id="searchResults"></div>
-    <div id="sortedResults"></div>
 
-    <!-- popup start here-->
-
+    <!--  popup end here -->
     <div id="popup">
       <form id="recipe-form">
         <h2>Add New Recipe</h2>
@@ -56,7 +62,7 @@
         </div>
 
         <div class="fpop">
-          <label for="ingredients">Ingredients (Atlest 5):</label>
+          <label for="ingredients">Ingredients(separated by comma):</label>
         </div>
         <div class="fpop">
           <input
@@ -93,18 +99,20 @@
         </div>
       </form>
     </div>
-    <!-- popup end here-->
-    <div id="recipe-list">
-      <h2>New Recipes</h2>
-      <div class="fnewrecipe">
+    <!-- adding new recipe-->
+    <div class="newrecipe">
+      <div class="fnewrecipe" id="newrecipe-container">
         <ul id="recipes"></ul>
       </div>
+      <div id="addRecipe">
+        <button
+          onclick="document.getElementById('popup').style.display='block'"
+        >
+          Add More Recipes
+        </button>
+      </div>
     </div>
-
-    <div class="recipe-timer" id="page-timer">
-      Time spent on the page: 0 seconds
-    </div>
-
+    <h4>(Thankyou for visiting my page)</h4>
     <script src="script.js"></script>
   </body>
 </html>
